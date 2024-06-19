@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 20:11:27 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/06/18 20:59:49 by ilyanbendib      ###   ########.fr       */
+/*   Created: 2024/06/19 11:38:38 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/06/19 19:14:25 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HEADER_HPP
+# define HEADER_HPP
+
+#include <iostream>
+#include <string.h>
 #include "phonebook.hpp"
+#include "contact.hpp"
 
-void PhoneBook::addContact(void)
-{
+std::string formatString(const std::string& str);
 
-}
-
-PhoneBook::PhoneBook(void)
-{
-	i = 0;
-	
-	
-}
+#endif

@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 20:20:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/06/18 20:57:07 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/06/19 19:33:16 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-
+#include <iostream>
+#include "contact.hpp"
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <sstream>
+#include <cctype>
 
 class PhoneBook
 {
+	private:
+		int	_index;
+		Contact _contact[8];
 	public:
-		int i;
-		int tab[8];
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	addContact(void);
-		void	searchContact(void);
+		void Welcom_to_chat(void) const;
+		void add(void);
+		void exit(bool &running);
+		void search(Contact contact[8]);
+		
 };
 
-class Contact
-{
-	
-};
+#endif
