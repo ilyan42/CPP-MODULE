@@ -1,13 +1,12 @@
-NAME = phonebook
+NAME = test
 
-SRC =		srcs/main.cpp \
-			srcs/contact.cpp \
-			srcs/phonebook.cpp \
+SRC =		srcs/test.cpp \
+			srcs/Account.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 
 all: $(NAME)

@@ -1,8 +1,6 @@
-NAME = phonebook
+NAME = test
 
 SRC =		srcs/main.cpp \
-			srcs/contact.cpp \
-			srcs/phonebook.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++

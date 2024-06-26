@@ -6,15 +6,14 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 18:37:58 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/06/20 18:39:52 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:49:10 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <vector>
 #include <algorithm>
 #include <functional>
-#include "Account.hpp"
-
+#include "../include/Account.hpp"
 
 int		main( void ) {
 

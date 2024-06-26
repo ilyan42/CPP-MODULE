@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 20:11:27 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/06/20 19:04:48 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:35:45 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook(void)
 {
 	this->_index = 0;
+	this->_current_index = 0;
 }
 
 PhoneBook::~PhoneBook(void) {}
@@ -36,20 +37,15 @@ void PhoneBook::exit(bool &running)
 
 void PhoneBook::add(void)
 {
-	static int i;
-
-	if (i < 8)
+	if (_current_index > 7)
 	{
-		_contact[i].init_contact(*this);
-		std::cout << _index << std::endl;
-		i++;
+		std::cout << "The phonebook is full. Replacing rows" << std::endl;
+		_current_index = 0;
 	}
-	else
-	{
-		std::cout << "The phonebook is full" << std::endl;
-		std::cout << _index << std::endl;
-		i = 0;
-	}
+	_contact[_current_index].init_contact(*this);
+	std::cout << _current_index << std::endl;
+	_current_index++;
+	increment_index();
 }
 
 static void _display()
@@ -101,11 +97,14 @@ int PhoneBook::increment_index(void)
 
 void PhoneBook::search(void)
 {
+	if (_index == 0)
+	{
+		std::cout << "No contact to display" << std::endl;
+		return;
+	}
 	_display();
 	for (int i = 0; i < _index; i++)
-	{
 		_contact[i].display_contact(i);
-	}
 	std::cout << std::endl;
 	std::cout << "Enter the index of the contact you want to display : ";
 	std::string contact_index;

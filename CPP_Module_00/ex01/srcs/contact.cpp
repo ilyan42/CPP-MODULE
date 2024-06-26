@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:40:05 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/06/20 19:20:19 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:17:41 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,42 +43,43 @@ std::string Contact::get_darkest_secret(void)
 
 void Contact::init_contact(PhoneBook &phonebook)
 {
-	// while (this->_first_name.empty())
-	// {
-	// 	if (!std::cin.good())
-	// 		return;
+	(void)phonebook;
+	std::string str = "";
+
+	while (!std::cin.eof() && str == "")
+	{
 		std::cout << "Enter your first name : ";
-		std::getline(std::cin, _first_name);
-	// }
-	// while (this->_last_name.empty())
-	// {
-	// 	if (!std::cin.good())
-	// 		return;
+		if (std::getline(std::cin, str) && str != "")
+			_first_name = str;
+	}
+	str = "";
+	while (!std::cin.eof() && str == "")
+	{
 		std::cout << "Enter your last name : ";
-		std::getline(std::cin, _last_name);
-	// }
-	// while (this->_nickname.empty())
-	// {
-	// 	if (!std::cin.good())
-	// 		return;
+		if (std::getline(std::cin, str) && str != "")
+			_last_name = str;
+	}
+	str = "";
+	while (!std::cin.eof() && str == "")
+	{
 		std::cout << "Enter your nickname : ";
-		std::getline(std::cin, _nickname);
-	// }
-	// while (this->_phone_number.empty())
-	// {
-	// 	if (!std::cin.good())
-	// 		return;
+		if (std::getline(std::cin, str) && str != "")
+			_nickname = str;
+	}
+	str = "";
+	while (!std::cin.eof() && str == "")
+	{
 		std::cout << "Enter your phone number : ";
-		std::getline(std::cin, _phone_number);
-	// }
-	// while (this->_darkest_secret.empty())
-	// {
-	// 	if (!std::cin.good())
-	// 		return;
+		if (std::getline(std::cin, str) && str != "")
+			_phone_number = str;
+	}
+	str = "";
+	while (!std::cin.eof() && str == "")
+	{
 		std::cout << "Enter your darkest secret : ";
-		std::getline(std::cin, _darkest_secret);
-	// }
-		phonebook.increment_index();
+		if (std::getline(std::cin, str) && str != "")
+			_darkest_secret = str;
+	}
 }
 
 void Contact::display_contact(int index)
