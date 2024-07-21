@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 14:07:01 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/06/26 15:26:37 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:22:47 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@
 class HumanB
 {
 	private :
-		weapon *weapon;
+		Weapon *weapon;
+		std::string name;
 	public :
 		HumanB(std::string name);
 		~HumanB();
+		void attack();
+		void setWeapon(Weapon &weapon);
 };
 
 #endif

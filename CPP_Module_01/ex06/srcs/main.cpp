@@ -5,30 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 14:07:28 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/07/10 19:26:42 by ilyanbendib      ###   ########.fr       */
+/*   Created: 2024/07/21 19:18:34 by ilyanbendib       #+#    #+#             */
+/*   Updated: 2024/07/21 20:27:08 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/HumanA.hpp"
-#include "../include/HumanB.hpp"
+#include "../include/Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
+	if (ac != 2)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		std::cout << "Usage: ./harl level" << std::endl;
+		return 1;
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	Harl harl;
+	harl.complain(av[1]);
 	return 0;
 }

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replace_string.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 14:07:28 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/07/10 19:26:42 by ilyanbendib      ###   ########.fr       */
+/*   Created: 2024/07/10 19:52:52 by ilyanbendib       #+#    #+#             */
+/*   Updated: 2024/07/10 19:53:23 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/HumanA.hpp"
-#include "../include/HumanB.hpp"
+#include "../include/header.hpp"
 
-int main()
+std::string replace_string(std::string str, std::string to_replace, std::string replace_with)
 {
+	size_t pos = 0;
+	while ((pos = str.find(to_replace, pos)) != std::string::npos)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		str.replace(pos, to_replace.length(), replace_with);
+		pos += replace_with.length();
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+	return str;
 }

@@ -1,9 +1,7 @@
-NAME = test
+NAME = harl
 
 SRC =		srcs/main.cpp \
-			srcs/HumanA.cpp \
-			srcs/HumanB.cpp \
-			srcs/Weapon.cpp
+			srcs/harl.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++

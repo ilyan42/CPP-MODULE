@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 14:06:28 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/07/10 19:22:29 by ilyanbendib      ###   ########.fr       */
+/*   Created: 2024/07/10 19:52:12 by ilyanbendib       #+#    #+#             */
+/*   Updated: 2024/07/10 19:53:29 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef HEADER_HPP
+# define HEADER_HPP
 
 # include <iostream>
-# include <string>
-# include "Weapon.hpp"
 
-class HumanA
-{
-	private :
-		Weapon &weapon;
-		std::string name;
-	public :
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA();
-		void attack();
-		void setWeapon(Weapon &weapon);
-};
+std::string replace_string(std::string str, std::string to_replace, std::string replace_with);
 
 #endif

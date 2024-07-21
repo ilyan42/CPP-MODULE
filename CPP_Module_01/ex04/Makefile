@@ -1,9 +1,7 @@
 NAME = test
 
 SRC =		srcs/main.cpp \
-			srcs/HumanA.cpp \
-			srcs/HumanB.cpp \
-			srcs/Weapon.cpp
+			srcs/replace_string.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
