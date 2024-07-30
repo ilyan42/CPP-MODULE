@@ -3,23 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 19:18:34 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/07/21 20:27:08 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/07/30 15:20:48 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Harl.hpp"
 
-int main(int ac, char **av)
+int get_index(char *level)
 {
-	if (ac != 2)
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (int i = 0; i < 4; ++i)
 	{
-		std::cout << "Usage: ./harl level" << std::endl;
-		return 1;
+		if (levels[i] == level)
+			return i;
 	}
-	Harl harl;
-	harl.complain(av[1]);
+	return -1;
+}
+
+int main(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+		Harl harl;
+		switch (get_index(argv[1])) 
+		{
+			case 0:
+				harl.complain("DEBUG");
+				break;
+			case 1:
+				harl.complain("INFO");
+				break;
+			case 2:
+				harl.complain("WARNING");
+				break;
+			case 3:
+				harl.complain("ERROR");
+				break;
+			default:
+			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
+		}
+	}
+	else
+		std::cerr << "do ./harl_filter [DEBUG, INFO, WARNING, ERROR]" << std::endl;
 	return 0;
 }
