@@ -1,7 +1,9 @@
 NAME = Fixed
 
 SRC =		srcs/main.cpp \
-			srcs/Fixed.cpp
+			srcs/Fixed.cpp \
+
+INCLUDES =	include/Fixed.hpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
@@ -11,8 +13,8 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(INCLUDES) Makefile
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME) -I $(INCLUDES)
 
 clean:
 	$(RM) $(OBJ)

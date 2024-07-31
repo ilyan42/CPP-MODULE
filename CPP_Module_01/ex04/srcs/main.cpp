@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:53:45 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/07/30 13:29:18 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/07/30 16:49:21 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/header.hpp"
+#include <iostream>
 #include <fstream>
 
 std::string replace_string(const std::string& str, const std::string& from, const std::string& to)

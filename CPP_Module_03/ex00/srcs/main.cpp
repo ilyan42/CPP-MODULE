@@ -5,25 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 16:32:27 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/07/30 16:37:54 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/07/31 18:13:25 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/07/31 18:39:15 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Fixed.hpp"
+#include "../include/ClapTrap.hpp"
 
-int main( void )
+int	main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	ClapTrap test;
+	ClapTrap test2(test);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+	test.attack("target");
+	test.takeDamage(5);
+	test.beRepaired(5);
+	
+	return (0);
 }

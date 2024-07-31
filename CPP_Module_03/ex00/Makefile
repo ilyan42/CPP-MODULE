@@ -1,9 +1,9 @@
-NAME = Fixed
+NAME = ClapTrap
 
 SRC =		srcs/main.cpp \
-			srcs/Fixed.cpp
+			srcs/ClapTrap.cpp \
 
-INCLUDES =	include/Fixed.hpp
+INCLUDES =	include/ClapTrap.hpp \
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
