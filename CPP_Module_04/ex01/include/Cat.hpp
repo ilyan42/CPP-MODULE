@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 18:13:25 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:17:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/08/01 15:37:22 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/08/01 16:55:21 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int	main(void)
+#include <iostream>
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	ClapTrap test;
-	ClapTrap test2(test);
+	public :
+		Cat();
+		~Cat();
+		Cat(const Cat &other);
+		Cat &operator=(const Cat &other);
+		void makeSound() const;
+};
 
-	test2.attack("target");
-	test2.takeDamage(5);
-	test2.beRepaired(5);
-	
-	return (0);
-}
+#endif

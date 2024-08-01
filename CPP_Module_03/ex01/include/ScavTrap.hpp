@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 18:13:25 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:17:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/08/01 11:25:44 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/08/01 13:00:12 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+#include <iostream>
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap test;
-	ClapTrap test2(test);
+	public :
+		ScavTrap();
+		ScavTrap(const ScavTrap& other);
+		~ScavTrap();
+		ScavTrap& operator=(const ScavTrap& other);
+		void attack(const std::string& target);
+		void guardGate();
+};
 
-	test2.attack("target");
-	test2.takeDamage(5);
-	test2.beRepaired(5);
-	
-	return (0);
-}
+#endif

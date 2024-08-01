@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 18:13:25 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:17:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/08/01 15:38:07 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/08/01 16:55:19 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int	main(void)
+#include <iostream>
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	ClapTrap test;
-	ClapTrap test2(test);
+	public :
+		Dog();
+		~Dog();
+		Dog(const Dog &other);
+		Dog &operator=(const Dog &other);
+		void makeSound() const;
+};
 
-	test2.attack("target");
-	test2.takeDamage(5);
-	test2.beRepaired(5);
-	
-	return (0);
-}
+#endif

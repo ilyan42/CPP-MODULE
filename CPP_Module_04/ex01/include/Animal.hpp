@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 18:13:25 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:17:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/08/01 15:36:13 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/08/01 16:57:23 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int	main(void)
+#include <iostream>
+
+class Animal
 {
-	ClapTrap test;
-	ClapTrap test2(test);
+	protected :
+		std::string type;
+	public :
+		Animal();
+		~Animal();
+		Animal(const Animal &other);
+		Animal &operator=(const Animal &other);
+		std::string getType() const;
+		virtual void makeSound() const;
+};
 
-	test2.attack("target");
-	test2.takeDamage(5);
-	test2.beRepaired(5);
-	
-	return (0);
-}
+#endif

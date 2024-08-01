@@ -6,10 +6,9 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 17:13:42 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:18:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/08/01 13:38:48 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../include/ClapTrap.hpp"
 
@@ -56,26 +55,18 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage! Now has " << _hit << " points." << std::endl;
 	if (this->_hit > 0)
 		this->_hit -= amount;
 	else
 		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
-	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage! Now has " << _hit << " points." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_hit <= 0)
-	{
-		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
-		return ;
-	}
-	if (this->_energy <= 0)
-	{
-		std::cout << this->_name << " is out of energy!" << std::endl;
-		return ;
-	}
-	this->_energy -= 1;
-	this->_hit += amount;
 	std::cout << "ClapTrap " << this->_name << " be repaired " << amount << " points of energy! Now has " << _hit << " points of energy"<< std::endl;
+	if (this->_energy < 10)
+		this->_energy += amount;
+	else
+		std::cout << "ClapTrap " << this->_name << " is full of energy!" << std::endl;
 }

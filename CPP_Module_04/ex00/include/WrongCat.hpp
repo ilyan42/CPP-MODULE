@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 18:13:25 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:17:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/08/01 17:09:07 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/08/01 17:13:37 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int	main(void)
+#include <iostream>
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	ClapTrap test;
-	ClapTrap test2(test);
+	public :
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat &other);
+		WrongCat& operator=(const WrongCat &other);
+		void makeSound(void) const;
+};
 
-	test2.attack("target");
-	test2.takeDamage(5);
-	test2.beRepaired(5);
-	
-	return (0);
-}
+#endif

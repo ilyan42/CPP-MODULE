@@ -6,10 +6,9 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 17:13:42 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/08/01 15:18:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/08/01 15:13:49 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../include/ClapTrap.hpp"
 
