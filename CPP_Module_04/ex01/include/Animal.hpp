@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:36:13 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/08 16:32:41 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:08:12 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal
 {
@@ -21,7 +22,7 @@ class Animal
 		std::string type;
 	public :
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(const Animal &other);
 		Animal &operator=(const Animal &other);
 		std::string getType() const;

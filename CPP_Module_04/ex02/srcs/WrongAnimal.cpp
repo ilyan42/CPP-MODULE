@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 17:14:25 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/08 17:20:35 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/08/01 17:14:34 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/08/01 17:29:09 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongCat.hpp"
+#include "../include/WrongAnimal.hpp"
 
-WrongCat::WrongCat() : WrongAnimal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "constructor WrongCat called" << std::endl;
-	_type = "Wrong Cat";
+	std::cout << "constructor WrongAnimal called" << std::endl;
+	this->_type = "Wrong lion";
 }
 
-WrongCat::~WrongCat()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "destructor WrongCat called" << std::endl;
+	std::cout << "destructor WrongAnimal called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& other) : WrongAnimal()
+WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {
-	std::cout << "copy constructor WrongCat called" << std::endl;
+	std::cout << "copy constructor WrongAnimal called" << std::endl;
 	*this = other;
 }
 
-WrongCat& WrongCat::operator=(const WrongCat &other)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &other)
 {
 	std::cout << "operator asignation called" << std::endl;
 	this->_type = other._type;
 	return (*this);
 }
 
-void WrongCat::makeSound() const
+void WrongAnimal::makeSound() const
 {
 	std::cout << "the " << _type << " roar" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+	return (this->_type);
 }

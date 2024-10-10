@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:58:14 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/08 18:53:34 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/08 18:55:29 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,5 @@ int main()
 	Cat2->printIdeas();
 	delete Cat2;
 }
+
+// new Animal();

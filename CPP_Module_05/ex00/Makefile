@@ -1,17 +1,9 @@
-NAME = Animal
+NAME = Bureaucrat
 
 SRC =		srcs/main.cpp \
-			srcs/Animal.cpp \
-			srcs/Cat.cpp \
-			srcs/Dog.cpp \
-			srcs/WrongAnimal.cpp \
-			srcs/WrongCat.cpp \
+			srcs/Bureaucrat.cpp \
 
-INCLUDES =	include/Animal.hpp \
-			include/Cat.hpp \
-			include/Dog.hpp \
-			include/WrongAnimal.hpp \
-			include/WrongCat.hpp \
+INCLUDES =	include/Bureaucrat.hpp \
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
