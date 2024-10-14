@@ -3,9 +3,17 @@ NAME = Bureaucrat
 SRC =		srcs/main.cpp \
 			srcs/Bureaucrat.cpp \
 			srcs/Form.cpp \
+			srcs/PresidentialPardonForm.cpp \
+			srcs/RobotomyRequestForm.cpp \
+			srcs/ShrubberyCreationForm.cpp \
+
 
 INCLUDES =	include/Bureaucrat.hpp \
 			include/Form.hpp \
+			include/PresidentialPardonForm.hpp \
+			include/ShrubberyCreationForm.hpp \
+			include/RobotomyRequestForm.hpp \
+
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
