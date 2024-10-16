@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:43:00 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/15 15:20:05 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/15 15:20:11 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AForm
 		int const _gradExecute;
 		int const _gradRequired;
 	public :
-		~AForm();
+		virtual ~AForm();
 		AForm(std::string const _name, int const gradExecute, int const gradRequired);
 		AForm(AForm const &copy);
 		AForm &operator=(AForm const & copy);

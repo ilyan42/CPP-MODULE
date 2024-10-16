@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 12:20:22 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/15 13:42:04 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/15 15:32:04 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "../include/ShrubberyCreationForm.hpp"
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/PresidentialPardonForm.hpp"
+#include "../include/Intern.hpp"
 
 void	sectionTitle(const std::string& title)
 {
@@ -26,46 +27,34 @@ void	sectionTitle(const std::string& title)
 void	testForm(Bureaucrat &bureaucrat, AForm &form)
 {
 	std::cout << form;
-	bureaucrat.signForm(form);
 	bureaucrat.executeForm(form);
 }
 
-int	main() 
+int main()
 {
-	Bureaucrat	burro("burro", 146);
-	Bureaucrat	burro2("burro2", 42);
-	std::cout << burro << burro2;
-
-	try {
-		{
-			sectionTitle("shrubbery creation");
-			ShrubberyCreationForm form("home");
-			testForm(burro, form);
-		}
-		{
-			sectionTitle("robotomy request");
-			RobotomyRequestForm form("Bender");
-			testForm(burro, form);
-		}
-		{
-			sectionTitle("presidential pardon");
-			PresidentialPardonForm form("lrocca");
-			testForm(burro, form);
-		}
-		PresidentialPardonForm form("lrocca");
-		{
-			sectionTitle("execute unsigned form");
-			std::cout << form;
-			burro.executeForm(form);
-		}
-		{
-			sectionTitle("too low to execute");
-			burro.signForm(form);
-			burro2.executeForm(form);
-		}
+	Intern someRandomIntern;
+	Bureaucrat burro("John", 1);
+	try
+	{
+		sectionTitle("Creating Robotomy Request Form");
+		AForm &form1 = someRandomIntern.makeForm("robotomy request", "Bender");
+		testForm(burro, form1);
+		delete &form1;
 	}
-	catch (std::exception& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+	catch (std::exception& e)
+	{
+		std::cerr << "Error creating or executing Robotomy Request Form: " << e.what() << std::endl;
 	}
-	return (0);
+	try
+	{
+		sectionTitle("Creating Shrubbery Creation Form");
+		AForm &form2 = someRandomIntern.makeForm("shrubbery creation", "Bender");
+		testForm(burro, form2);
+		delete &form2;
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Error creating or executing Shrubbery Creation Form: " << e.what() << std::endl;
+	}
+	return 0;
 }
