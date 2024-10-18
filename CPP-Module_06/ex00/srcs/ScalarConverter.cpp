@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:56:15 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/16 19:24:29 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:29:43 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ ScalarConverter::ScalarConverter(ScalarConverter const &copy)
 ScalarConverter &ScalarConverter::operator=(ScalarConverter const &copy)
 {
 	if (this != &copy)
-	{}
+	{
+		*this = copy;
+	}
 	return (*this);
 }
 
@@ -41,7 +43,6 @@ bool VerifSyntax(const std::string &literal)
 	for (size_t i = 0; i < literal.length(); ++i)
 	{
 		char currentChar = literal[i];
-
 		if (currentChar == 'f')
 			fcount++;
 		if (currentChar == '.')
@@ -52,9 +53,9 @@ bool VerifSyntax(const std::string &literal)
 			pos++;
 		if (!std::isdigit(currentChar) && set.find(currentChar) == std::string::npos)
 		{
-            isValid = false;
+			isValid = false;
 			return (isValid);
-        }
+		}
 	}
 	if (fcount > 1)
 		isValid = false;
@@ -111,7 +112,6 @@ void ScalarConverter::convert(const std::string &literal)
 		case INT:
 		{
 			int intValue = strtol(literal.c_str(), NULL, 10);
-
 			char charValue = static_cast<char>(intValue);
 			float floatValue = static_cast<float>(intValue);
 			double doubleValue = static_cast<double>(intValue);
@@ -127,16 +127,13 @@ void ScalarConverter::convert(const std::string &literal)
 		case FLOAT:
 		{
 			float floatValue = strtof(literal.c_str(), NULL);
-			
 			int intValue = static_cast<int>(floatValue);
 			double doubleValue = static_cast<double>(floatValue);
 			char charValue = static_cast<char>(intValue);
-
 			if (floatValue >= 1 && floatValue <= 127)
 				std::cout << "char: '" << charValue << "'" << std::endl;
 			else
 				std::cout << "char: Non affichable" << std::endl;
-
 			std::cout << "int: " << intValue << std::endl;
 			if (literal.find('.') != std::string::npos)
 			{
@@ -164,11 +161,8 @@ void ScalarConverter::convert(const std::string &literal)
 		case DOUBLE:
 		{
 			double doubleValue = strtod(literal.c_str(), NULL);
-			
 			int intValue = static_cast<int>(doubleValue);
 			char charValue = static_cast<char>(intValue);
-
-			// Vérifie si charValue est affichable
 			if (doubleValue >= 1 && doubleValue <= 127)
 				std::cout << "char: '" << charValue << "'" << std::endl;
 			else
@@ -185,10 +179,8 @@ void ScalarConverter::convert(const std::string &literal)
 			}
 			else
 				std::cout << "float: " << doubleValue << "f" << std::endl;
-			// Vérification si la chaîne se termine par ".0"
 			if (literal.find('.') != std::string::npos) {
 				size_t pos = literal.find('.');
-				// Vérifie si le caractère suivant le point est '0' et si c'est le dernier caractère
 				if (pos + 1 < literal.length() && literal[pos + 1] == '0' && (pos + 2 == literal.length() || literal[pos + 2] == 'd')) {
 					std::cout << "double: " << doubleValue << ".0" << std::endl;
 				} else {

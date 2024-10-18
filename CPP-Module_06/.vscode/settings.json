@@ -1,10 +1,12 @@
 {
 	"files.associations": {
 		"iostream": "cpp",
+		"*.tcc": "cpp",
+		"string": "cpp",
+		"string_view": "cpp",
 		"array": "cpp",
 		"atomic": "cpp",
 		"bit": "cpp",
-		"*.tcc": "cpp",
 		"cctype": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
@@ -29,8 +31,6 @@
 		"numeric": "cpp",
 		"optional": "cpp",
 		"random": "cpp",
-		"string": "cpp",
-		"string_view": "cpp",
 		"system_error": "cpp",
 		"tuple": "cpp",
 		"type_traits": "cpp",

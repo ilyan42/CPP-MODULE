@@ -1,10 +1,12 @@
-NAME = ScalarConverter
+NAME =  Base
 
 SRC =		srcs/main.cpp \
-			srcs/ScalarConverter.cpp \
+			srcs/Base.cpp \
 
-
-INCLUDES =	include/ScalarConverter.hpp \
+INCLUDES =	include/Base.hpp \
+			include/A.hpp \
+			include/B.hpp \
+			include/C.hpp \
 
 
 OBJ = $(SRC:.cpp=.o)

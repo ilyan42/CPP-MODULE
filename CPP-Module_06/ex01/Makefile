@@ -1,10 +1,9 @@
-NAME = ScalarConverter
+NAME =  Serialization
 
 SRC =		srcs/main.cpp \
-			srcs/ScalarConverter.cpp \
+			srcs/Serialization.cpp \
 
-
-INCLUDES =	include/ScalarConverter.hpp \
+INCLUDES =	include/Serialization.hpp \
 
 
 OBJ = $(SRC:.cpp=.o)
