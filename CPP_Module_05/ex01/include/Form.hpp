@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:43:00 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/10 18:35:24 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:29:12 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class Form
 		int const _gradExecute;
 		int const _gradRequired;
 	public :
-		Form();
 		~Form();
 		Form(std::string const _name, int const gradExecute, int const gradRequired);
 		Form(Form const &copy);

@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 18:56:31 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/09 18:24:37 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:20:46 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
 	
 	Item_index0 = src->createMateria("ice");
 	me->equip(Item_index0);
-	Item_index1 = src->createMateria("cure");
+	Item_index1 = src->createMateria("curecewcwec");
 	me->equip(Item_index1);
 	Item_index2 = src->createMateria("ice");
 	me->equip(Item_index2);

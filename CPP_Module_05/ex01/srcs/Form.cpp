@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:44:16 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/14 14:07:12 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:34:34 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void Form::beSigned(Bureaucrat &b)
 	if (b.getGrade() <= this->_gradRequired)
 		this->_signed = true;
 	else
-		this->_signed = false;
+		throw (GradeTooLowException());
 }
 
 //  GET  //

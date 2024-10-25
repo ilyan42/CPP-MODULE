@@ -5,31 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 18:06:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/23 17:49:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/10/23 14:24:29 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/10/24 15:31:05 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "../include/easyfind.hpp"
+#include <vector>
 
 int main()
 {
-	srand(time(0));
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (pointeur): ";
-		identify(obj);
-		delete obj;
+	std::vector<int> vec;
+	for (int i = 0; i < 10; i++)
+		vec.push_back(i);
+	try
+	{
+		std::vector<int>::iterator it = easyfind(vec, 2);
+		std::cout << "Value found: " << *it << std::endl;
 	}
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (référence): ";
-		identify(*obj);
-		delete obj;
+	catch (std::exception &e)
+	{
+		std::cout << "Value not found" << std::endl;
 	}
-
 	return 0;
 }

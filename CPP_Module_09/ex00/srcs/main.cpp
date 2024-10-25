@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:40:46 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/14 15:45:44 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/10/25 15:56:46 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/10/25 20:11:55 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#include "../include/BitcoinExchange.hpp"
 
-#include <iostream>
-
-class ShruberyCreationForm
+int main(int argc, char **argv)
 {
-	public :
-		ShruberyCreationForm(std::string name);
-		~ShruberyCreationForm();
-		
+	if (argc != 2)
+	{
+		std::cout << "error argument !" << std::endl;
+	}
+	BitcoinExchange bigdata;
+	bigdata.btcValueWithTheNbBtc(argv[1]);
+	return 0;
 }
-
-#endif

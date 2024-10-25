@@ -5,31 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 18:06:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/23 17:49:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/10/24 18:57:42 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/10/24 19:17:57 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "../include/Span.hpp"
 
 int main()
 {
-	srand(time(0));
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (pointeur): ";
-		identify(obj);
-		delete obj;
-	}
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (référence): ";
-		identify(*obj);
-		delete obj;
-	}
+	Span sp = Span(5);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
 
+	Span sp2 = Span(10000);
+	std::vector<int> vec;
+	for (int i = 0; i < 10000; i++)
+		vec.push_back(i);
+	sp2.addMultipleNumbers(vec.begin(), vec.end());
+	
+	
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "----------------" << std::endl;
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
 	return 0;
 }

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 18:06:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/23 17:49:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/10/21 13:12:38 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/10/24 14:09:19 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#ifndef ITER_HPP
+# define ITER_HPP
 
-int main()
+# include <iostream>
+
+template< typename T >
+void iter(T *array, size_t size, void (*f)(T const &))
 {
-	srand(time(0));
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (pointeur): ";
-		identify(obj);
-		delete obj;
-	}
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (référence): ";
-		identify(*obj);
-		delete obj;
-	}
-
-	return 0;
+	for (size_t i = 0; i < size; i++)
+		f(array[i]);
 }
+
+template< typename T >
+void iter(T *array, size_t size, void (*f)(T &))
+{
+	for (size_t i = 0; i < size; i++)
+		f(array[i]);
+}
+
+#endif

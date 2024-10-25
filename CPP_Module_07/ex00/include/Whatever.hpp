@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Whatever.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 18:06:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/23 17:49:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/10/21 12:02:26 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/10/21 12:09:54 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-int main()
+#include <iostream>
+
+template< typename T >
+void swap(T &a, T &b)
 {
-	srand(time(0));
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (pointeur): ";
-		identify(obj);
-		delete obj;
-	}
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (référence): ";
-		identify(*obj);
-		delete obj;
-	}
-
-	return 0;
+	T tmp = a;
+	a = b;
+	b = tmp;
 }
+
+template< typename T >
+T min(T a, T b)
+{
+	return (a < b ? a : b);
+}
+
+template< typename T >
+T max(T a, T b)
+{
+	return (a > b ? a : b);
+}
+
+#endif

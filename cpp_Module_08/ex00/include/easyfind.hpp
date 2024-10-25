@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 18:06:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/23 17:49:24 by ilbendib         ###   ########.fr       */
+/*   Created: 2024/10/21 15:40:07 by ilbendib          #+#    #+#             */
+/*   Updated: 2024/10/23 14:26:36 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-int main()
+# include <iostream>
+# include <algorithm>
+
+template <typename T>
+typename T::iterator easyfind(T &container, int value)
 {
-	srand(time(0));
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (pointeur): ";
-		identify(obj);
-		delete obj;
-	}
-	for (int i = 0; i < 5; ++i) {
-		Base* obj = generate();
-		std::cout << "identify (référence): ";
-		identify(*obj);
-		delete obj;
-	}
-
-	return 0;
+	typename T::iterator it = std::find(container.begin(), container.end(), value);
+	if (it == container.end())
+		throw std::exception();
+	return it;
 }
+
+#endif
