@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:35:37 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/10/29 19:11:08 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/10/29 23:11:51 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ int main(int argc, char const *argv[])
 	rpn.RPN_calculate(str);
 	return 0;
 }
+fezfz

@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:32:04 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2024/10/29 19:11:57 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2024/10/29 23:11:46 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int RPN::RPN_calculate(std::string str)
 	std::cout << "str: " << str << std::endl;
 	for (size_t i = 0; i < str.length(); i++)
 	{
-	
+		
 	}
 	std::cout << stack.top() << std::endl;
 	return (1);
