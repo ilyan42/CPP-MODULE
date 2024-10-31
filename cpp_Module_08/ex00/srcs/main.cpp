@@ -6,12 +6,13 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:24:29 by ilbendib          #+#    #+#             */
-/*   Updated: 2024/10/24 15:31:05 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/10/30 16:51:18 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/easyfind.hpp"
 #include <vector>
+#include <deque>
 
 int main()
 {
@@ -20,7 +21,7 @@ int main()
 		vec.push_back(i);
 	try
 	{
-		std::vector<int>::iterator it = easyfind(vec, 2);
+		std::vector<int>::iterator it = easyfind(vec, 9);
 		std::cout << "Value found: " << *it << std::endl;
 	}
 	catch (std::exception &e)
